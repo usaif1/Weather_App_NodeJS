@@ -27,8 +27,9 @@ const forecast = (lat, long, callback) => {
 
         else {
 
-            callback(undefined, body.daily.data[0].summary + " The current temp is "  + body.currently.temperature + "°C with a " + body.currently.humidity + "% chance of humidity")
-
+            console.log(body.daily.data[0])
+            callback(undefined, body.daily.data[0].summary + " The current temp is "  + body.currently.temperature + "°C with a " + body.currently.humidity + "% chance of humidity. Highest Temp is "+ body.daily.data[0].temperatureHigh +"°C and lowest Temp is "+body.daily.data[0].temperatureLow+"°C.")
+             
         }
 
     })
